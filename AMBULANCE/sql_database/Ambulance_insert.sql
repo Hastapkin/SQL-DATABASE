@@ -64,3 +64,9 @@ SELECT * FROM Equipments;
 SELECT * FROM PatientTransfers;
 SELECT * FROM EmergencyCalls;
 SELECT * FROM Services;
+
+-- Insert data into the CustomerSpending table
+INSERT INTO CustomerSpending (CustomerID, PatientName, TotalSpent)
+VALUES (1, 'Sophia Martinez', 4500.00),
+       (2, 'Daniel Lee', 5000.00);
+SELECT * FROM CustomerSpending;
