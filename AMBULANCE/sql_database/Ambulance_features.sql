@@ -36,7 +36,20 @@ FROM Equipments
 JOIN Ambulances ON Equipments.AmbulanceID = Ambulances.AmbulanceID
 JOIN Drivers ON Ambulances.DriverID = Drivers.DriverID;
 
--- Insert data into the CustomerSpending table
-INSERT INTO CustomerSpending (CustomerID, PatientName, TotalSpent)
-VALUES (1, 'Sophia Martinez', 4500.00),
-       (2, 'Daniel Lee', 5000.00);
+-- Show drivers who are absent
+SELECT * FROM Drivers WHERE IsAbsent = TRUE;
+
+--------------------Show patients who left the hospital or are still in the hospital------------------------------
+-- Patients still in the hospital
+SELECT * FROM PatientTransfers WHERE Status = 'In Hospital';
+
+-- Patients who left the hospital
+SELECT * FROM PatientTransfers WHERE Status = 'Left Hospital';
+
+--Show VIP customers who spent over $1000
+SELECT * FROM CustomerSpending WHERE TotalSpent > 1000.00;
+
+--Show customers who need to take care of longer
+SELECT * FROM Services WHERE CareDuration > 0 ORDER BY CareDuration DESC;
+
+-- 
