@@ -80,3 +80,18 @@ CREATE TABLE Services (
     FOREIGN KEY (HospitalID) REFERENCES Hospitals(HospitalID),
 	FOREIGN KEY (EquipmentID) REFERENCES Equipments(EquipmentID)
 );
+--Modify the Drivers table to include attendance information.
+ALTER TABLE Drivers ADD IsAbsent BOOLEAN DEFAULT FALSE;
+
+--Modify the PatientTransfers table to include the patient's status.
+ALTER TABLE PatientTransfers ADD Status VARCHAR(50) DEFAULT 'In Hospital';
+
+--Add a new table for tracking customer spending to identify VIP customers.
+CREATE TABLE CustomerSpending (
+    CustomerID INT PRIMARY KEY,
+    PatientName VARCHAR(255),
+    TotalSpent DECIMAL(10, 2)
+);
+
+--Add a column in the Services table to track the duration of care needed.
+ALTER TABLE Services ADD CareDuration INT DEFAULT 0; -- Duration in days
