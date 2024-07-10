@@ -95,3 +95,5 @@ CREATE TABLE CustomerSpending (
 
 --Add a column in the Services table to track the duration of care needed.
 ALTER TABLE Services ADD CareDuration INT DEFAULT 0; -- Duration in days
+
+-- IF THIS TABLE NOT RUN WELL, YOU CAN TRY THE Ambulane_table_extra.sql (❁´◡`❁)
