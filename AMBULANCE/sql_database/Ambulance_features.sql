@@ -35,3 +35,8 @@ SELECT
 FROM Equipments
 JOIN Ambulances ON Equipments.AmbulanceID = Ambulances.AmbulanceID
 JOIN Drivers ON Ambulances.DriverID = Drivers.DriverID;
+
+-- Insert data into the CustomerSpending table
+INSERT INTO CustomerSpending (CustomerID, PatientName, TotalSpent)
+VALUES (1, 'Sophia Martinez', 4500.00),
+       (2, 'Daniel Lee', 5000.00);
